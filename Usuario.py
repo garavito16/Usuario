@@ -7,14 +7,18 @@ class Usuario:		# esto es lo que tenemos hasta ahora
     # agregando el método de depósito
     def hacer_depósito(self, amount):	# toma un argumento que es el monto del depósito
         self.balance_cuenta += amount	# la cuenta del usuario específico aumenta en la cantidad del valor recibido
+        return self
 
     # agregando el método de retiro
     def hacer_retiro(self, amount):     # toma un argumento que es el monto del retiro
         self.balance_cuenta -= amount   # la cuenta del usuario específico disminuye en la cantidad del valor recibido
+        return self
 
     def mostrar_balance_usuario(self):
         print(f"User: {self.name}, Balance: {self.balance_cuenta}")
+        return self
 
     def transferir_dinero(self, usuario, amount):
         self.balance_cuenta -= amount
         usuario.balance_cuenta += amount
+        return self
